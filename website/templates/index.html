@@ -42,7 +42,7 @@
         <hr>
 
        {% for task in todo_list %}
-    <p>{{ task.id }} : {{ task.task }} : {{ task.complete }} </p>
+    <p>{{ task.id }} : {{ task.task }} : {{ task.complete }} : {{task.time_created.strftime("%d-%m-%Y")}} </p>
     <form action="/update/{{ task.id }}" method="post">
         {% if task.complete %}
             <button type="submit" name="toggle" value="incomplete">Mark as Incomplete</button>
